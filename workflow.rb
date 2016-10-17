@@ -33,4 +33,3 @@ FileUtils.rm_rf Dir.glob("#{work_dir}/img/*")
   list[:items].push item
 end
 
-print list.to_json
