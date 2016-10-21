@@ -1,6 +1,8 @@
 # alfred-lgtm-workflow
 alfred3 workflow for pick up multi random lgtm pics
 
+[Check it in Packal](http://www.packal.org/workflow/lgtm)
+
 ##Usage
 - Type `lgtm-in` or `lgtm-gif` to get some random lgtm pics(default number is 3).
 - Use `shift` or `cmd+y` to preview
