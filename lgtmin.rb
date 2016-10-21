@@ -3,11 +3,12 @@ require 'fileutils'
 require 'open-uri'
 require 'json'
 
+num = ENV['num'].to_i
 list = {items: []}
 work_dir = Dir.pwd
 FileUtils.rm_rf Dir.glob("#{work_dir}/cache/*")
 
-1.upto(3) do |i|
+1.upto(num) do |i|
   id = Net::HTTP.get_response('lgtm.in', '/g')['location'].split('/').last
   uri = URI.parse("https://lgtm.in/i/#{id}")
   req = Net::HTTP::Get.new(uri)

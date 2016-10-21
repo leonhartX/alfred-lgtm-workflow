@@ -3,11 +3,12 @@ require 'fileutils'
 require 'open-uri'
 require 'json'
 
+num = ENV['num'].to_i
 list = {items: []}
 work_dir = Dir.pwd
 FileUtils.rm_rf Dir.glob("#{work_dir}/cache/*")
 
-1.upto(3) do |i|
+1.upto(num) do |i|
   json = JSON.parse(Net::HTTP.get URI.parse("http://takashicompany.com/api/lgtm/"))
   id = json['lgtm_image'].split('view/')[1].gsub(/\//, "_")
   File.open("cache/#{id}", 'wb') do |file|
