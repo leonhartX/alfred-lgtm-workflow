@@ -10,7 +10,7 @@ alfred3 workflow for pick up multi random lgtm pics
 >a big number will cause the workflow goes much more slower!
 
 ###lgtm-in
-This command will pick up random pics from lgtm.in, you can press `cmd+enter` to open the lgtm.in's page
+This command will pick up random pics from lgtm.in, you can press `ctrl+enter` to open the lgtm.in's page
 
 ###lgtm-gif
 This command will pick up 3 random gif lgtm from http://takashicompany.com/lgtm
