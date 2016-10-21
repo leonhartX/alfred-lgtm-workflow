@@ -5,7 +5,7 @@ require 'json'
 
 list = {items: []}
 work_dir = Dir.pwd
-FileUtils.rm_rf Dir.glob("#{work_dir}/img/*")
+FileUtils.rm_rf Dir.glob("#{work_dir}/cache/*")
 
 1.upto(3) do |i|
   id = Net::HTTP.get_response('lgtm.in', '/g')['location'].split('/').last
@@ -17,7 +17,7 @@ FileUtils.rm_rf Dir.glob("#{work_dir}/img/*")
   json = JSON.parse(http.request(req).body)
   suffix = json['actualImageUrl'].include?(".gif")? "gif" : "jpg"
 
-  File.open("img/#{id}.#{suffix}", 'wb') do |file|
+  File.open("cache/#{id}.#{suffix}", 'wb') do |file|
     open(json['actualImageUrl'], 'rb') do |image|
       file.write(image.read)
     end
@@ -27,9 +27,10 @@ FileUtils.rm_rf Dir.glob("#{work_dir}/img/*")
     type: "file:skipcheck",
     title: "#{id}.#{suffix}",
     subtitle: "Likes: #{json['likes']}, Dislikes:#{json['dislikes']}",
-    arg: "#{work_dir}/img/#{id}.#{suffix}",
-    icon: { path:"img/#{id}.#{suffix}" }
+    arg: "#{work_dir}/cache/#{id}.#{suffix}",
+    icon: { path:"cache/#{id}.#{suffix}" }
   }
   list[:items].push item
 end
 
+print list.to_json
