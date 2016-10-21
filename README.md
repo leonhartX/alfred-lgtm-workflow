@@ -2,12 +2,15 @@
 alfred3 workflow for pick up multi random lgtm pics
 
 ##Usage
-- Type `lgtmin` or `lgtmgif` to get random lgtm pics.
+- Type `lgtm-in` or `lgtm-gif` to get some random lgtm pics(default number is 3).
 - Use `shift` or `cmd+y` to preview
 - Press `enter` to paste the markdown
+- Type `lgtm-set` to set how many pics you want to pick every time
 
-###lgtmin
-This command will pick up 3 random pics from lgtm.in, you can press `cmd+enter` to open the lgtm.in's page
+>a big number will cause the workflow goes much more slower!
 
-###lgtmgif
+###lgtm-in
+This command will pick up random pics from lgtm.in, you can press `cmd+enter` to open the lgtm.in's page
+
+###lgtm-gif
 This command will pick up 3 random gif lgtm from http://takashicompany.com/lgtm
