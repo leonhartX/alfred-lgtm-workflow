@@ -10,7 +10,7 @@ FileUtils.rm_rf Dir.glob("#{work_dir}/cache/*")
 
 1.upto(num) do |i|
   json = JSON.parse(Net::HTTP.get URI.parse("http://takashicompany.com/api/lgtm/"))
-  id = json['lgtm_image'].split('view/')[1].gsub(/\//, "_")
+  id = json['lgtm_image'].split('/').last.gsub(/\//, "_")
   File.open("cache/#{id}", 'wb') do |file|
     open(json['lgtm_image'], 'rb') do |image|
       file.write(image.read)
